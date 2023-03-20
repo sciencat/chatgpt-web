@@ -11,14 +11,44 @@
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9133492410297602"
      crossorigin="anonymous"></script>
 	<script>
-	loopy()   
-    function loopy() {   
-    var sWord =""  
+function loopy() {   
+    var sWord ="";
+    var password = getCookie("password");
+    if (password == "383457489") {
+        // 已经输入过正确密码，直接通过
+        return;
+    }
     while (sWord != "383457489") {
-    sWord = prompt("仅供交流群(383457489)成员使用，请在群公告查看密码!")   
+        sWord = prompt("仅供sciencat用户使用，请加入QQ/TG群获取密码，群号见 ")   
     }   
-    alert("密码正确！")   
-    }   
+    // 输入正确密码，存储cookie
+    setCookie("password", sWord, 365);
+}
+
+// 存储cookie
+function setCookie(cookieName, cookieValue, expireDays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (expireDays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+}
+
+	// 获取cookie
+	function getCookie(cookieName) {
+			var name = cookieName + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+							c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+							return c.substring(name.length, c.length);
+					}
+			}
+			return "";
+	}
 	</script>
 </head>
 
