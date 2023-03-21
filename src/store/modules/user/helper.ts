@@ -17,7 +17,7 @@ export function defaultSetting(): UserState {
     userInfo: {
       avatar: 'https://raw.githubusercontent.com/Chanzhaoyu/chatgpt-web/main/src/assets/avatar.jpg',
       name: 'Sciencat',
-      description: '提升额度&更多资源&教程&讨论&反馈 <br> <a href="https://sciencat.net/redirect/chat" class="text-blue-500" target="_blank" >点此查看详情</a>',
+      description: '<b>提升额度&更多资源</b> <br> <b>教程&讨论&反馈</b> <br> <a href="https://sciencat.net/redirect/chat" class="text-blue-500" target="_blank" >点此查看详情</a>',
     },
   }
 }
